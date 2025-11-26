@@ -1,19 +1,20 @@
-// Write a program to find the LCM of two numbers.
+//Write a program to find the LCM of two numbers.
 #include <stdio.h>
-
-#include <stdio.h>
-
 int main() {
-    int a, b, gcd, lcm, i;
-    scanf("%d %d", &a, &b);
+    int num1, num2, max, lcm;
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
 
+    max = (num1 > num2) ? num1 : num2;
 
-    for(i = 1; i <= a && i <= b; i++) {
-        if(a % i == 0 && b % i == 0)
-            gcd = i;
+    while (1) {
+        if (max % num1 == 0 && max % num2 == 0) {
+            lcm = max;
+            printf("LCM of %d and %d is %d\n", num1, num2, lcm);
+            break;
+        }
+        max++;  
     }
-    lcm = (a * b) / gcd;
 
-    printf("%d\n", lcm);
     return 0;
 }
